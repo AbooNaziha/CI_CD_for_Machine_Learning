@@ -9,11 +9,20 @@ on:
 permissions: write-all
 jobs: 
   build: 
+     name: deploy to staging
      runs-on: ubuntu-latest
      container: docker:/dvcorg/cml-py3:latest
      steps:
-        - uses: actions/checkout@v3
-        - uses: iterative/setup-cml@v2
+        - uses: actions/checkout@v4
+        - name: Use Node.js ${{ matrix.node_version }}
+        - uses: actions/setup-node@v4
+          with:
+            node-version: ${{ matrix.node_version }}
+        - name: npm install, build and test
+          run: |
+            npm install
+            npm run build --if-present
+            npm test
         - name: Install Packeges
         - run: make install
         - name: Format
