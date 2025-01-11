@@ -16,9 +16,3 @@ eval:
     echo '![Confusion Matrix](./Results/model_results.png)' >> report.md
    
     cml comment create report.md
-
-git commit -am "new changes"
-git push origin main
-
-git commit -am "new changes"
-git push origin main
