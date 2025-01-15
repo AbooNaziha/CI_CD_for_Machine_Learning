@@ -65,8 +65,6 @@ sio.dump(pipe, "Model/drug_pipeline.skops")
 
 sio.load("Model/drug_pipeline.skops", trusted=True)
 
-git commit -am "new changes"
-git push origin main
 
 
 
