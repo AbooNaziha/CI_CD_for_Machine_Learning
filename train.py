@@ -68,3 +68,6 @@ with open("./Results/metrics.txt", "w") as outfile:
 
 ## Saving the model file
 sio.dump(pipe, "./Model/drug_pipeline.skops")
+
+
+sio.load(pipe, "./Model/drug_pipeline.skops")
