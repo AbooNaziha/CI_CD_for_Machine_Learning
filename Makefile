@@ -16,12 +16,15 @@ eval:
 	echo '![Confusion Matrix](./Results/model_results.png)' >> report.md
 	
 	cml comment create report.md
-		
+
+		# saving model and result to a branch 
 update-branch:
 	git config --global user.name $(USER_NAME)
 	git config --global user.email $(USER_EMAIL)
 	git commit -am "Update with new results"
 	git push --force origin HEAD:update
+
+	# Hugging face login and push to hub
 hf-login: 
 	pip install -U "huggingface_hub[cli]"
 	git pull origin update
