@@ -26,10 +26,10 @@ update-branch:
 
 	# Hugging face login and push to hub
 hf-login: 
-	pip install -U "huggingface_hub[cli]"
-	git pull origin update
-	git switch update
-	huggingface-cli login --token $(HF) --add-to-git-credential
+    pip install -U "huggingface_hub[cli]"
+    git pull origin update --rebase
+    git switch update
+    huggingface-cli login --token $(HF) --add-to-git-credential
 
 push-hub: 
 	huggingface-cli upload AbooNaziha24/Drug-Classification ./App --repo-type=space --commit-message="Sync App files"
