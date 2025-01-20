@@ -1,10 +1,10 @@
 import gradio as gr
 import skops.io as sio
 import warnings
-# from sklearn.exceptions import InconsistentVersionWarning
+from sklearn.exceptions import InconsistentVersionWarning
 
 # Suppress the version warnings
-# warnings.filterwarnings("ignore", category=InconsistentVersionWarning)
+warnings.filterwarnings("ignore", category=InconsistentVersionWarning)
 
 # Explicitly specify trusted types
 trusted_types = [
